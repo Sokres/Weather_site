@@ -1,0 +1,8 @@
+@import 'normalize.css';
+@import './styles/global/box-model.css';
+@import './styles/global/color.css';
+@import './styles/global/focus.css';
+@import './styles/global/font.css';
+@import './styles/sizes/index.css';
+@import './styles/global/body.css';
+@import './styles/header.css';
