@@ -1,26 +1,23 @@
-export interface Wether {
-	lat: number;
-	lon: number;
-	timezone: string;
-	timezone_offset: number;
-	data: Daum[];
+export interface WeatherObj {
+	coord: Coord;
+	weather: Weather[];
+	base: string;
+	main: Main;
+	visibility: number;
+	wind: Wind;
+	rain: Rain;
+	clouds: Clouds;
+	dt: number;
+	sys: Sys;
+	timezone: number;
+	id: number;
+	name: string;
+	cod: number;
 }
 
-export interface Daum {
-	dt: number;
-	sunrise: number;
-	sunset: number;
-	temp: number;
-	feels_like: number;
-	pressure: number;
-	humidity: number;
-	dew_point: number;
-	uvi: number;
-	clouds: number;
-	visibility: number;
-	wind_speed: number;
-	wind_deg: number;
-	weather: Weather[];
+export interface Coord {
+	lon: number;
+	lat: number;
 }
 
 export interface Weather {
@@ -28,4 +25,35 @@ export interface Weather {
 	main: string;
 	description: string;
 	icon: string;
+}
+
+export interface Main {
+	temp: number;
+	feels_like: number;
+	temp_min: number;
+	temp_max: number;
+	pressure: number;
+	humidity: number;
+	grnd_level: number;
+}
+
+export interface Wind {
+	speed: number;
+	deg: number;
+}
+
+export interface Rain {
+	'1h': number;
+}
+
+export interface Clouds {
+	all: number;
+}
+
+export interface Sys {
+	type: number;
+	id: number;
+	country: string;
+	sunrise: number;
+	sunset: number;
 }

@@ -3,7 +3,7 @@
     font-family: 'Weblyleek';
     font-style: normal;
     font-display: swap;
-    src: url('/font/weblysleekuil.woff2') format('woff2');
+    src: url('../font/weblysleekuil.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,5 +11,5 @@
     font-family: 'Weblyleek';
     font-style: normal;
     font-display: swap;
-    src: url('/font/weblysleekuisb.woff2') format('woff2');
+    src: url('../font/weblysleekuisb.woff2') format('woff2');
 }

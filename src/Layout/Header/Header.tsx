@@ -1,21 +1,32 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Select, { StylesConfig } from 'react-select';
+import Select, { SingleValue, StylesConfig } from 'react-select';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store/store';
+import { getCurrentWeather } from '../../store/weather.slice';
 import { StateOption } from '../../interface/Select.intrrface';
+import { city } from '../../lib/City';
+import useTtime from '../../hook/useTtime';
+import { getCurrentWeatherTen } from '../../store/weatherTen.slice';
 
 const Header = () => {
-	const options: StateOption[] = [
-		{ value: 'chocolate', label: 'Chocolate' },
-		{ value: 'strawberry', label: 'Strawberry' },
-		{ value: 'vanilla', label: 'Vanilla' },
-	];
+	const options = city;
+	const dispatch = useDispatch<AppDispatch>();
+	const [value, setValue] = useState<StateOption | null>(null);
+	const [season] = useTtime();
+
+	useEffect(() => {
+		if (value?.value) {
+			dispatch(getCurrentWeather(value.value));
+			dispatch(getCurrentWeatherTen(value.value));
+		}
+	}, [value, dispatch]);
+
 	const styles: StylesConfig<StateOption> = {
 		control: (styles) => ({
 			...styles,
-			// position: 'relative',
 			backgroundColor: 'rgba(255, 255, 255, 0.56)',
 			borderRadius: '20px',
-			// paddingLeft: '30px',
 		}),
 		dropdownIndicator: (styles) => ({
 			...styles,
@@ -40,15 +51,19 @@ const Header = () => {
 
 	return (
 		<>
-			<header className="header">
+			<header style={{ backgroundColor: season.data }} className={'header'}>
 				<img
-					src="./img/Logo/Logo.svg"
+					src={`./img/Logo/logo_${season.day ? 'day' : 'night'}.svg`}
 					alt="Логотип"
 					className="header_logo"
 					width="100"
 				/>
 				<Select
-					noOptionsMessage={() => 'Город не наеден'}
+					defaultValue={options[0]}
+					onChange={(newValue) =>
+						setValue(newValue as SingleValue<StateOption>)
+					}
+					noOptionsMessage={() => 'Город не найден'}
 					className="header_select"
 					options={options}
 					styles={styles}

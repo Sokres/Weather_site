@@ -1,0 +1,129 @@
+.board_weather {
+    width: 900px;
+    margin: 0 auto;
+    background-image: url('./img/summer_night.jpg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board_weather__info {
+    margin: 70px;
+    padding: 40px;
+    display: grid;
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+}
+
+.board_weather__wraper {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; */
+    display: flex;
+    align-items: center;
+}
+
+.board_weather__title {
+    margin: 0;
+    margin-right: 20px;
+}
+
+.board_weather__day_length {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.box-img-text {
+    display: flex;
+
+    &:first-of-type {
+        margin-right: 10px;
+    }
+}
+
+.box-img-text__wrap {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.box-img-text__img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+.box-img-text__info {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* стили для температуры */
+.board-wether__wraper-temp {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+}
+
+.board_weather__time {
+    margin: 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.info_weather__clouds::first-letter {
+    text-transform: uppercase;
+}
+
+.board_weather__temp_data {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.board_weather__temp {
+    display: flex;
+    margin-right: 15px;
+}
+
+.temp__info {
+    /* font-weight: 700; */
+    font-size: 3.2em;
+    line-height: 1;
+}
+
+.temp__img {
+    width: 60px;
+    height: 60px;
+}
+
+.board_weather__info_now {
+    display: flex;
+    flex-direction: column;
+}
+
+.board_weather__info-alt {
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.side-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    row-gap: 5px;
+}

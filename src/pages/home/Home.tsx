@@ -1,11 +1,14 @@
+import BasicInfo from '../../components/BasicInfo/BasicInfo';
 import BoardInfo from '../../components/BoardInfo/BoardInfo';
+import SwiperSlider from '../../components/SwiperSlider';
 
 const Home = () => {
 	return (
-		<div>
-			Homedddddddddddddd
+		<>
 			<BoardInfo />
-		</div>
+			<BasicInfo />
+			<SwiperSlider />
+		</>
 	);
 };
 

@@ -33,8 +33,8 @@ export const flavourOptions: readonly FlavourOption[] = [
 ];
 
 export interface StateOption {
-	readonly value: string;
-	readonly label: string;
+	value: string;
+	label: string;
 }
 
 export const stateOptions: readonly StateOption[] = [

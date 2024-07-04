@@ -1,0 +1,25 @@
+import { StateOption } from '../interface/Select.intrrface';
+
+export const city: StateOption[] = [
+	{ value: 'Москва', label: 'Москва' },
+	{ value: 'Санкт-Петербург', label: 'Санкт-Петербург' },
+	{ value: 'Елизово', label: 'Елизово' },
+	{ value: 'Новосибирск', label: 'Новосибирск' },
+	{ value: 'Екатеринбург', label: 'Екатеринбург' },
+	{ value: 'Казань', label: 'Казань' },
+	{ value: 'Нижний Новгород', label: 'Нижний Новгород' },
+	{ value: 'Челябинск', label: 'Челябинск' },
+	{ value: 'Самара', label: 'Самара' },
+	{ value: 'Омск', label: 'Омск' },
+	{ value: 'Ростов-на-Дону', label: 'Ростов-на-Дону' },
+	{ value: 'Уфа', label: 'Уфа' },
+	{ value: 'Красноярск', label: 'Красноярск' },
+	{ value: 'Пермь', label: 'Пермь' },
+	{ value: 'Воронеж', label: 'Воронеж' },
+	{ value: 'Волгоград', label: 'Волгоград' },
+	{ value: 'Краснодар', label: 'Краснодар' },
+	{ value: 'Саратов', label: 'Саратов' },
+	{ value: 'Тюмень', label: 'Тюмень' },
+	{ value: 'Тольятти', label: 'Тольятти' },
+	{ value: 'Ижевск', label: 'Ижевск' },
+];
