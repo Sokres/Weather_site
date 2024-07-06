@@ -25,12 +25,9 @@ const initialState: CurrentWeatherTen = {
 export const getCurrentWeatherTen = createAsyncThunk<WeatherTen, string>(
 	'weatherTen/get',
 	async (city: string) => {
-		console.log(1);
 		const { data } = await axios.get<WeatherTen>(
-			`${url}/forecast?q=${city},ru&appid=${key}&cnt=4&units=metric&lang=ru`
+			`${url}/forecast?q=${city},ru&appid=${key}&cnt=12&units=metric&lang=ru`
 		);
-
-		console.log(data);
 		return data;
 	}
 );

@@ -43,7 +43,7 @@ export const nowtime = (
 	const dayTxt = days[date.getDay()];
 	const hour = date.getHours();
 	const minut = date.getMinutes();
-	const time = `${day} ${month} ${year} - ${hour}:${
+	const time = `${day} ${month} ${year}  ${hour}:${
 		minut !== 0 ? minut : '0' + minut
 	}`;
 	const hourSun = `${hour}: ${minut}`;

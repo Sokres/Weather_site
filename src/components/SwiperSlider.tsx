@@ -1,26 +1,37 @@
-// import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import required modules
-import { Pagination } from 'swiper/modules';
-
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 const SwiperSlider = () => {
 	return (
 		<>
 			<Swiper
-				slidesPerView={4}
-				centeredSlides={true}
-				spaceBetween={30}
-				grabCursor={true}
+				breakpoints={{
+					// when window width is >= 320px
+					320: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					// when window width is >= 480px
+					480: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+					// when window width is >= 640px
+					640: {
+						slidesPerView: 4,
+						spaceBetween: 40,
+					},
+				}}
+				navigation={true}
 				pagination={{
 					clickable: true,
 				}}
-				modules={[Pagination]}
+				modules={[Pagination, Navigation]}
 				className="mySwiper"
 			>
 				<SwiperSlide>Slide 1</SwiperSlide>

@@ -1,0 +1,95 @@
+.weather_10_day {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 60px;
+    border-top-right-radius: 60px;
+    border-top-left-radius: 60px;
+}
+
+.weather_10_day__title {
+    margin: 0;
+    margin-left: 40px;
+    font-size: 2rem;
+}
+
+.weather_10_day {
+    .weather_10_day__container {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        padding: 40px;
+
+        /* flex-wrap: nowrap; */
+        .swiper-button-prev {
+            color: rgb(248, 248, 248);
+        }
+
+        .swiper-button-next {
+            color: rgb(248, 248, 248);
+        }
+    }
+}
+
+.day_weather {
+    display: grid;
+    justify-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: -5px 10px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+.day_weather__temp {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.day_weather__temp--num {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.day_weather__title {
+    display: grid;
+    text-align: center;
+}
+
+.day_weather__img {
+    text-align: center;
+}
+
+@media (width <=1024px) {
+    .weather_10_day {
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        padding: 0 20px;
+        padding-top: 20px;
+    }
+
+    .weather_10_day__title {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .weather_10_day {
+        .weather_10_day__container {
+            padding: 0;
+            margin: 0;
+            padding-bottom: 50px;
+
+
+            /* flex-wrap: nowrap; */
+            .swiper-button-prev {
+                display: none;
+            }
+
+            .swiper-button-next {
+                display: none;
+            }
+        }
+    }
+}

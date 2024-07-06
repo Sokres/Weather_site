@@ -3,56 +3,97 @@ import { AppDispatch, RootState } from '../../store/store';
 import useTtime, { nowtime } from '../../hook/useTtime';
 import { useEffect } from 'react';
 import { getCurrentWeatherTen } from '../../store/weatherTen.slice';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 
 const BasicInfo = () => {
 	const [season] = useTtime();
 
 	const dataWeather = useSelector((s: RootState) => s.weatherTen);
-	console.log(dataWeather.weather?.list);
 	const dispatch = useDispatch<AppDispatch>();
 	useEffect(() => {
 		dispatch(getCurrentWeatherTen('Москва'));
 	}, [dispatch]);
 
 	return (
-		<section className="weather_10_day">
-			<h2 className="weather_10_day__title">Прогноз на 10 дней</h2>
-			<ul className="weather_10_day__container">
+		<section
+			style={{
+				backgroundColor: season.data,
+				color: `${season.day ? '#272727' : '#F7F7F7'}`,
+			}}
+			className="weather_10_day"
+		>
+			<h2 className="weather_10_day__title">Прогноз на 36 часов</h2>
+			<Swiper
+				breakpoints={{
+					// when window width is >= 320px
+					320: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					// when window width is >= 480px
+					480: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+					// when window width is >= 640px
+					640: {
+						slidesPerView: 4,
+						spaceBetween: 40,
+					},
+				}}
+				navigation={true}
+				pagination={{
+					clickable: true,
+				}}
+				modules={[Pagination, Navigation]}
+				className="weather_10_day__container"
+			>
 				{dataWeather.weather?.list.map((i) => {
 					const date = nowtime(i.dt);
 					return (
-						<li key={i.dt} className="weather_10_day__container day_weather">
+						<SwiperSlide
+							key={i.dt}
+							className="weather_10_day__item day_weather"
+						>
 							<h3 className="day_weather__title">
 								<span className='"day_weather__title--info'>
 									{date?.dayTxt}
 								</span>
 								<span className='"day_weather__title--info'>{date?.time}</span>
 							</h3>
-							<img src="./img/icon/night/01d.svg" alt="Значок погоды" />
-							<ul className="day_weather__temp">
-								<li className="day_weather__temp--day">
-									{Math.round(i.main.temp ?? 0)}°
-								</li>
-								<li className="day_weather__temp--night">
+
+							<div className="day_weather__temp">
+								<span className="day_weather__temp--num">
 									{Math.round(i.main.temp_min ?? 0)}
-								</li>
-							</ul>
+								</span>
+								<img
+									className="day_weather__img"
+									src="./img/icon/night/01d.svg"
+									alt="Значок погоды"
+								/>
+							</div>
 							<p className="day_weather__felt">
 								ощущается как {Math.round(i.main.feels_like ?? 0)}°
 							</p>
 
-							<ul className="board_weather__info-alt side-info">
+							<ul className=" side-info">
 								<li className="box-img-text">
 									<img
 										src={`./img/icon/${
 											season.day ? 'day' : 'night'
 										}/pressure.svg`}
 										alt="значок давления"
-										className="box-img-text__img "
+										className="box-img-text__img"
 									/>
 									<div className="box-img-text__wrap">
-										<span className="box-img-text__info ">Давление</span>
-										<span className="box-img-text__info ">
+										<span className="box-img-text__info">Давление</span>
+										<span className="box-img-text__info">
 											{i.main.grnd_level} мм рт. ст.
 										</span>
 									</div>
@@ -87,10 +128,10 @@ const BasicInfo = () => {
 									</div>
 								</li>
 							</ul>
-						</li>
+						</SwiperSlide>
 					);
 				})}
-			</ul>
+			</Swiper>
 		</section>
 	);
 };
