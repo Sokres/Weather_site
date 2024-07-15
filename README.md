@@ -4,3 +4,4 @@
 Использовал:  
 - API [openweathermap](https://openweathermap.org/api)
 - redux async thunk
+Посмотреть [weather.sokres.ru](http://weather.sokres.ru/)
