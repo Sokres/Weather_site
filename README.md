@@ -1,6 +1,11 @@
 # Сайт с пронгозом погоды
 Запутсить проект __npm i && npm run dev__\
-Реализовал переключиени в зависимости от времени года и дня и ночи  
+Реализовал смену интерфейса в зависимости от времени года, дня и ночи
+Стек: 
+- vite
+- react
+- css
+- redux toolkit
 Использовал:  
 - API [openweathermap](https://openweathermap.org/api)
 - redux async thunk \
