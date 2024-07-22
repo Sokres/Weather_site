@@ -5,7 +5,8 @@
 - vite
 - react
 - css
-- redux toolkit \
+- redux toolkit
+- Typescript \
 
 Использовал:  
 - API [openweathermap](https://openweathermap.org/api)
