@@ -6,6 +6,7 @@
 - react
 - css
 - redux toolkit \
+
 Использовал:  
 - API [openweathermap](https://openweathermap.org/api)
 - redux async thunk \
