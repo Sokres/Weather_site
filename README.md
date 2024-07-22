@@ -6,7 +6,7 @@
 - react
 - css
 - redux toolkit
-- Typescript \
+- Typescript 
 
 Использовал:  
 - API [openweathermap](https://openweathermap.org/api)
