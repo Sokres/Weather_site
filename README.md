@@ -5,7 +5,7 @@
 - vite
 - react
 - css
-- redux toolkit
+- redux toolkit \
 Использовал:  
 - API [openweathermap](https://openweathermap.org/api)
 - redux async thunk \
